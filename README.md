@@ -1,4 +1,4 @@
-# event-countdown
+# Event Countdown
 An event countdown app that countdown
 
 This is an event timer countdown app that allow users to input the name, data and time of a future event and the apps runs a countdown in terms of days, hours, minutes and seconds to the event.
