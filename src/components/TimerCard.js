@@ -14,12 +14,14 @@ const TimerCard = ({ children }) => {
 const styles = StyleSheet.create({
     container: {
         alignSelf: 'center',
-        backgroundColor: '#FCFCFC',
+        backgroundColor: '#f7fafc',
+        borderColor: '#4A47A3',
+        borderWidth: 0.5,
         position: 'relative',
         width: screenWidth * 0.95,
         height: screenHeight * 0.085,
         borderRadius: 5,
-        borderBottomWidth: 0,
+        //borderBottomWidth: 0,
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 5,
