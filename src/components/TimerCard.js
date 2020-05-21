@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
         width: screenWidth * 0.95,
         height: screenHeight * 0.085,
         borderRadius: 5,
-        //borderBottomWidth: 0,
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 5,

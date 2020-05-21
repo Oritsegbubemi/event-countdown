@@ -23,7 +23,6 @@ const DateScreen = ({ navigation }) => {
                     //value={() => {}}
                     //onChangeText={() => {}}
                 />
-                
                 <TextInput
                     style={[styles.textStyle, styles.borderTop]}
                     placeholder="Event date"
@@ -66,8 +65,7 @@ const styles = StyleSheet.create({
         marginRight: 7,
         paddingLeft: 10,
         fontSize: 18,
-        padding: 10
-        
+        padding: 10,
     },
     textStyle2: {
         margin: 0,
@@ -75,12 +73,11 @@ const styles = StyleSheet.create({
         marginRight: 7,
         paddingLeft: 10,
         fontSize: 18,
-        padding: 10
-        
+        padding: 10,
     },
     borderTop: {
         borderColor: '#edeeef',
-        borderTopWidth: 1
+        borderTopWidth: 1,
     },
     button: {
         height: 50,
@@ -92,10 +89,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 5,
     },
-      buttonText: {
+    buttonText: {
         color: '#fff',
         fontSize: 18,
-    },
+    }
 });
 
 export default DateScreen;

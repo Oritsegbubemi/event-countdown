@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import { Ionicons } from '@expo/vector-icons';
 import CountDown from '../moment/CountDown';
+import EventCard from './EventCard';
 
 const HomeScreen = ({ navigation }) => {
     return (
@@ -12,10 +13,14 @@ const HomeScreen = ({ navigation }) => {
                 <CountDown />
             </View>
             
-            <View style={styles.listStyle}>
-                <Text>This is the Home Screen</Text>
-            </View>
-            
+            <ScrollView>
+                <EventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
+            </ScrollView>
 
             <ActionButton buttonColor="rgba(231,76,60,1)">
                 <ActionButton.Item buttonColor='#9b59b6' title="Add Event" onPress={() => {navigation.navigate("DateScreen")}}>
@@ -36,23 +41,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        //alignItems: 'center',
-        //justifyContent: 'center',
     },
     countDownStyle: {
         marginVertical: 15,
-    },
-    listStyle: {
-        marginHorizontal: 10,
-        marginVertical: 20,
-        alignItems: 'center',
-        justifyContent: 'center'
     },
     actionButtonIcon: {
         fontSize: 20,
         height: 22,
         color: 'white',
-      },
+    }
 });
 
 export default HomeScreen;
