@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import { Ionicons } from '@expo/vector-icons';
 import CountDown from '../moment/CountDown';
@@ -14,10 +14,6 @@ const HomeScreen = ({ navigation }) => {
             </View>
             
             <ScrollView>
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
                 <EventCard />
                 <EventCard />
             </ScrollView>

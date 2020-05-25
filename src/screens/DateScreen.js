@@ -1,8 +1,37 @@
-import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableHighlight } from 'react-native';
-import DateTimePicker from 'react-native-modal-datetime-picker';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight, ToastAndroid } from 'react-native';
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+import { formatDateTime } from '../moment/Moment';
 
 const DateScreen = ({ navigation }) => {
+
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [date, setDate] = useState('')
+    const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+
+    const showDatePicker = () => {
+        setDatePickerVisibility(true);
+    };
+
+    const hideDatePicker = () => {
+        setDatePickerVisibility(false);
+    };
+
+    const handleConfirm = (date) => {
+        ToastAndroid.show(
+            `A date has been picked: ${formatDateTime(date.toString())}`, 
+            ToastAndroid.LONG
+        );
+        hideDatePicker();
+        setDate(date)
+    };
+
+    const handleAddEventPress = () => {
+        //There is function that I am to call ...then()
+        navigation.navigate("HomeScreen")
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.fieldContainer}>
@@ -10,44 +39,44 @@ const DateScreen = ({ navigation }) => {
                     style={styles.textStyle}
                     placeholder="Event title"
                     spellCheck={false}
-                    //value={() => {}}
-                    //onChangeText={() => {}}
+                    value={title}
+                    onChangeText={setTitle}
                 />
                 <TextInput
                     style={[styles.textStyle2, styles.borderTop]}
                     placeholder="Event description"
                     spellCheck={false}
                     multiline
-                    textAlignVertical='top'
+                    textAlignVertical='center'
                     numberOfLines={3}
-                    //value={() => {}}
-                    //onChangeText={() => {}}
+                    value={description}
+                    onChangeText={setDescription}
                 />
                 <TextInput
                     style={[styles.textStyle, styles.borderTop]}
-                    placeholder="Event date"
+                    placeholder="Event date & time"
                     spellCheck={false}
-                    //value={() => {}}
-                    //editable={() => {}}
-                    //onFocus={() => {}}
+                    blurOnSubmit
+                    value={formatDateTime(date.toString())}
+                    editable={!isDatePickerVisible}
+                    onFocus={showDatePicker}
                 />
-                <DateTimePicker
-                    //isVisible={() => {}}
-                    //mode="datetime"
-                    //onConfirm={() => {}}
-                    //onCancel={() => {}}
+                <DateTimePickerModal
+                    isVisible={isDatePickerVisible}
+                    mode="datetime"
+                    onConfirm={handleConfirm}
+                    onCancel={hideDatePicker}
                 />
             </View>
-
             <TouchableHighlight
-                onPress={()=> {navigation.navigate("HomeScreen")}}
+                onPress={handleAddEventPress}
                 style={styles.button}
             >
                 <Text style={styles.buttonText}>Add</Text>
             </TouchableHighlight>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {

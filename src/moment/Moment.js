@@ -9,6 +9,14 @@ export function formatDate(dateString) {
     return parsed.format('D MMM YYYY');
 }
 
+export function formatDateTime(dateString) {
+    const parsed = moment(new Date(dateString)); 
+    if (!parsed.isValid()) {
+      return dateString;
+    }
+    return parsed.format('h:mm A on D MMM YYYY');
+}
+
 
 export function getCountdownParts(endDate) {
     const duration = moment.duration(moment(new Date(endDate)).diff(new Date()));

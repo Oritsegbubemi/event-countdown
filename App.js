@@ -13,7 +13,7 @@ const App = () => {
     return (
       <NavigationContainer style={styles.container} >
             <Stack.Navigator 
-                initialRouteName="HomeScreen" 
+                initialRouteName="DateScreen" 
                 //headerMode="none"
                 headerMode="screen"
                 screenOptions={{
