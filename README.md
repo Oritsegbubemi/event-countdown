@@ -5,10 +5,11 @@ This is an event timer countdown app that allow users to input the name, data an
 
 # Features
 - End of Month countdown
-- Allows  user to add name if event
+- Allow users to add name of event
+- Allow users to add a description of event
 - Allow users to add date and time of event
-- Write more about the event
-- Allows users to set reminders for event
+- Users can set reminders for events
+- Edit and Delete an event
 - Push notifications for event reminders
-- Delete an event
 - Share event with friends
+- And lot more to come...
