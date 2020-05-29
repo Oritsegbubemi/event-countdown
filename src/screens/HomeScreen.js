@@ -16,6 +16,7 @@ const HomeScreen = ({ navigation }) => {
             <ScrollView>
                 <EventCard />
                 <EventCard />
+                <EventCard />
             </ScrollView>
 
             <ActionButton buttonColor="rgba(231,76,60,1)">
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     countDownStyle: {
-        marginVertical: 15,
+        marginVertical: 10,
     },
     actionButtonIcon: {
         fontSize: 20,

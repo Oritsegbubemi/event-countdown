@@ -29,7 +29,12 @@ const DateScreen = ({ navigation }) => {
 
     const handleAddEventPress = () => {
         //There is function that I am to call ...then()
+        onPassData()
         navigation.navigate("HomeScreen")
+    }
+
+    const onPassData = () => {
+        console.log("Output: ", title, description, date)
     }
 
     return (

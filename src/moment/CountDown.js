@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     date: {
-        fontSize: 12,
+        fontSize: 13,
         textAlign: "left",
         color: '#121139',
     },
